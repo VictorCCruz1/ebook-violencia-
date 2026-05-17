@@ -90,7 +90,7 @@
     </div>
 
     <!-- StPageFlip via CDN (ou use o arquivo local js/page-flip.browser.js) -->
-    <script src="js/page-flip.browser.js"></script>
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
 
     <script>
         // === CONFIGURAÇÃO ===
@@ -124,7 +124,8 @@
         pageFlip.loadFromImages(pages);
         pageFlip.update();
         pageFlip.flip(0);
-
+        updatePageInfo();
+        
         // Controles
         const pageInfo = document.getElementById("page-info");
 
