@@ -27,12 +27,11 @@ h1 {
 
 #flipbook {
     width: 100%;
-    max-width: 500px;
     display: flex;
     justify-content: center;
 }
 
-.page { position: relative; }
+.page {width: 100% !important;height: 100% !important;}
 .page img { width: 100%; height: 100%; object-fit: contain; }
 .page a { position: absolute; display: block; }
 
@@ -125,20 +124,28 @@ const w = Math.min(window.innerWidth - padding, 500);
 const h = Math.min(w * 1.42, window.innerHeight - 120);
 
 const pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
-    width:  w,
-    height: h,
-    size:   "stretch",
-    showCover:          true,
-    usePortrait:        true,
-    flippingMode:       "hard",   // evita dobra estranha em tela pequena
-    maxShadowOpacity:   0.5,
-    startPage:          0,
-    disableFlipByClick: true,
+    width: window.innerWidth * 0.95,
+    height: window.innerHeight * 0.8,
 
-    // FORÇAR modo retrato (1 página) em QUALQUER largura
-    useMouseEvents: true,
-    autoSize:       true
+    size: "fixed",
+    minWidth: 300,
+    maxWidth: 600,
+    minHeight: 400,
+    maxHeight: 900,
+
+    drawShadow: false,
+    flippingTime: 600,
+
+    usePortrait: true,
+    useLandscape: false,   // 🔴 ESSENCIAL → desativa modo livro aberto
+
+    showCover: true,
+    startPage: 0,
+
+    disableFlipByClick: true
 });
+
+pageFlip.updateState({orientation: "portrait"});
 
 pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 pageFlip.flip(0);
