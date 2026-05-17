@@ -90,7 +90,7 @@
     </div>
 
     <!-- StPageFlip via CDN (ou use o arquivo local js/page-flip.browser.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+    <script src="js/page-flip.browser.js"></script>
 
     <script>
         // === CONFIGURAÇÃO ===
@@ -107,26 +107,23 @@
         const isMobile = window.innerWidth <= 600;
 
         // Cria o flipbook
+
         const pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
-            width:  isMobile ? 300 : 450,   // largura base da página
-            height: isMobile ? 450 : 675,   // altura base (proporção 2:3)
+            width: isMobile ? 300 : 450,
+            height: isMobile ? 400 : 600,
             size: "stretch",
-            minWidth: 250,
-            maxWidth: 600,
-            minHeight: 375,
-            maxHeight: 900,
-            showCover: true,                // capa como página dura
-            maxShadowOpacity: 0.5,
-            mobileScrollSupport: true,
-            drawShadow: true,
-            flippingTime: 800,
-            usePortrait: true,
-            startZIndex: 0,
-            autoSize: true,
+
+            showCover: true,     // mantém capa isolada
+            usePortrait: true,   // permite centralizar 1 página
+            startPage: 0,        // começa na capa corretamente
+
+            maxShadowOpacity: 0.5
         });
 
         // Carrega as imagens
         pageFlip.loadFromImages(pages);
+        pageFlip.update();
+        pageFlip.flip(0);
 
         // Controles
         const pageInfo = document.getElementById("page-info");
