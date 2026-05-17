@@ -1,0 +1,40 @@
+# 📖 Guia de Apoio e Proteção para Mulheres em Situação de Violência
+
+Flipbook interativo com informações, canais de denúncia, aplicativos e serviços de apoio voltados à proteção de mulheres em situação de violência ou risco.
+
+## 🔗 Acesse
+
+👉 **[Clique aqui para abrir o Guia](https://victorccruz1.github.io/ebook-violencia/)**
+
+Ou escaneie o QR Code:
+
+<!-- Substitua pelo seu QR Code -->
+qrcode_ebook.png
+
+## 📋 Conteúdo
+
+| Página | Tema |
+|--------|------|
+| 1 | Capa |
+| 2 | Telefones de emergência (190, 180, 192, 197) |
+| 3 | Delegacias e registro de ocorrência online |
+| 4 | Aplicativo PenhaS (Android e iOS) |
+| 5 | Redes de atendimento e acolhimento |
+| 6 | Dicas de segurança |
+| 7 | Mensagem final |
+
+## ✨ Funcionalidades
+
+- 📱 Responsivo (celular e desktop)
+- 🔗 Links clicáveis (telefones e sites)
+- 📖 Efeito de virar página (flipbook)
+- ⌨️ Navegação por teclado (← →)
+- 👆 Navegação por toque/arraste nos cantos
+
+## 🛠️ Tecnologias
+
+- HTML / CSS / JavaScript
+- [StPageFlip](https://github.com/Nodlik/StPageFlip) — biblioteca de flipbook
+- GitHub Pages — hospedagem
+
+## 📁 Estrutura
