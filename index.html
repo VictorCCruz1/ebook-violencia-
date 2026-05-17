@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Apoio e Proteção para Mulheres</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a0a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #d8b4fe;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Container do flipbook */
+        .flipbook-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flipbook-container canvas {
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(128, 0, 255, 0.3);
+        }
+
+        /* Controles */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .controls button {
+            background: #7c3aed;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .controls button:hover {
+            background: #9333ea;
+        }
+
+        .controls span {
+            color: #d8b4fe;
+            font-size: 0.95rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            h1 { font-size: 1rem; }
+            .controls button { padding: 8px 16px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📖 Guia de Apoio e Proteção para Mulheres em Situação de Violência</h1>
+
+    <div class="flipbook-container" id="flipbook"></div>
+
+    <div class="controls">
+        <button id="btn-prev">◀ Anterior</button>
+        <span id="page-info">Página 1 de 7</span>
+        <button id="btn-next">Próxima ▶</button>
+    </div>
+
+    <!-- StPageFlip via CDN (ou use o arquivo local js/page-flip.browser.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+
+    <script>
+        // === CONFIGURAÇÃO ===
+        const totalPages = 7;
+        const imageFolder = "pages";
+
+        // Gera lista de caminhos das imagens
+        const pages = [];
+        for (let i = 1; i <= totalPages; i++) {
+            pages.push(`${imageFolder}/page_${i}.png`);
+        }
+
+        // Detecta se é mobile para ajustar tamanho
+        const isMobile = window.innerWidth <= 600;
+
+        // Cria o flipbook
+        const pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
+            width:  isMobile ? 300 : 450,   // largura base da página
+            height: isMobile ? 450 : 675,   // altura base (proporção 2:3)
+            size: "stretch",
+            minWidth: 250,
+            maxWidth: 600,
+            minHeight: 375,
+            maxHeight: 900,
+            showCover: true,                // capa como página dura
+            maxShadowOpacity: 0.5,
+            mobileScrollSupport: true,
+            drawShadow: true,
+            flippingTime: 800,
+            usePortrait: true,
+            startZIndex: 0,
+            autoSize: true,
+        });
+
+        // Carrega as imagens
+        pageFlip.loadFromImages(pages);
+
+        // Controles
+        const pageInfo = document.getElementById("page-info");
+
+        function updatePageInfo() {
+            const current = pageFlip.getCurrentPageIndex() + 1;
+            pageInfo.textContent = `Página ${current} de ${totalPages}`;
+        }
+
+        document.getElementById("btn-prev").addEventListener("click", () => {
+            pageFlip.flipPrev();
+        });
+
+        document.getElementById("btn-next").addEventListener("click", () => {
+            pageFlip.flipNext();
+        });
+
+        pageFlip.on("flip", (e) => {
+            updatePageInfo();
+        });
+
+        // Navegação por teclado
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") pageFlip.flipNext();
+            if (e.key === "ArrowLeft" || e.key === "ArrowUp") pageFlip.flipPrev();
+        });
+    </script>
+
+</body>
+</html>
