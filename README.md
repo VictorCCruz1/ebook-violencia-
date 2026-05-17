@@ -2,14 +2,11 @@
 
 Flipbook interativo com informações, canais de denúncia, aplicativos e serviços de apoio voltados à proteção de mulheres em situação de violência ou risco.
 
-## 🔗 Acesse
+## 📖 Acesse o e-book
 
-👉 **[Clique aqui para abrir o Guia](https://victorccruz1.github.io/ebook-violencia/)**
+[👉 Clique aqui](https://victorccruz1.github.io/ebook-violencia/)
 
-Ou escaneie o QR Code:
-
-<!-- Substitua pelo seu QR Code -->
-qrcode_ebook.png
+![QR Code do e-book](ebook_qrcode.png)
 
 ## 📋 Conteúdo
 
