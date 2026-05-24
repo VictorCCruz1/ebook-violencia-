@@ -36,6 +36,4 @@ Flipbook interativo com informações, canais de denúncia, aplicativos e servi�
 
 ## 📑 PDF
 
-[👉 Clique aqui](https://victorccruz1.github.io/ebook-violencia/E-book_violencia)
-
-![QR Code do e-book](E-book_violencia.pdf)
+[👉 Clique aqui para visualizar o PDF](https://victorccruz1.github.io/ebook-violencia/pdf-viewer.html)
