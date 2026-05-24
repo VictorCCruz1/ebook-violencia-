@@ -124,18 +124,17 @@ span { color: #ddd; }
 
 const totalPages = 7;
 
-// Calcula tamanho com base na tela, ocupando bem o celular
-const padding = 20;
-const w = Math.min(window.innerWidth - padding, 500);
-const h = Math.min(w * 1.42, window.innerHeight - 120);
+// Calcula para ocupar bem a tela, mas forçando uma página só
+const maxW = Math.min(window.innerWidth * 0.95, 550); // limita a largura
+const maxH = window.innerHeight * 0.82;
 
 const pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
-    width: window.innerWidth * 0.95,
-    height: window.innerHeight * 0.8,
+    width: maxW,
+    height: maxH,
 
-    size: "fixed",
+    size: "stretch",
     minWidth: 300,
-    maxWidth: 600,
+    maxWidth: 550,
     minHeight: 400,
     maxHeight: 900,
 
@@ -143,7 +142,7 @@ const pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
     flippingTime: 600,
 
     usePortrait: true,
-    useLandscape: false,   // 🔴 ESSENCIAL → desativa modo livro aberto
+    useLandscape: false,
 
     showCover: true,
     startPage: 0,
