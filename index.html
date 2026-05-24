@@ -20,26 +20,32 @@ body {
 
 h1 {
     color: #d8b4fe;
-    margin: 10px;
+    margin: 2px 0;
+    padding: 0;
     text-align: center;
     font-size: 1rem;
+    line-height: 1;
 }
 
 #flipbook {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
+    height: calc(100vh - 80px); /* deixa espaço pros botões */
+    max-height: 85vh;
+    overflow: hidden;
 }
 
-.page {width: 100% !important;height: 100% !important;}
-.page img { width: 100%; height: 100%; object-fit: contain; }
-.page a { position: absolute; display: block; }
-
 .controls {
-    margin: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 20px;
     align-items: center;
+    z-index: 100;
 }
 
 button {
@@ -105,8 +111,6 @@ span { color: #ddd; }
     </div>
 
 </div>
-
-<h2> </h2>
 
 <div class="controls">
     <button id="btn-prev">◀</button>
