@@ -126,6 +126,19 @@ button:active{
         font-size:0.95rem;
     }
 }
+
+.stf__parent {
+    margin: 0 auto !important;
+}
+
+.stf__wrapper {
+    margin: 0 auto !important;
+}
+
+.stf__block {
+    overflow: hidden !important;
+}
+
 </style>
 </head>
 
@@ -199,23 +212,25 @@ const pageFlip = new St.PageFlip(
         minHeight: 420,
         maxHeight: 800,
 
-        maxShadowOpacity: 0.3,
-
         showCover: true,
-
-        mobileScrollSupport: false,
 
         usePortrait: true,
 
         autoSize: true,
 
-        drawShadow: true,
+        drawShadow: false,
 
         flippingTime: 600,
 
-        startPage: 0,
+        mobileScrollSupport: false,
 
-        swipeDistance: 30
+        swipeDistance: 30,
+
+        /* IMPORTANTE */
+        disableFlipByClick: true,
+        clickEventForward: false,
+        useMouseEvents: false,
+        showPageCorners: false
     }
 );
 
