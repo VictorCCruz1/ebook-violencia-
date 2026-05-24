@@ -34,4 +34,8 @@ Flipbook interativo com informações, canais de denúncia, aplicativos e servi�
 - [StPageFlip](https://github.com/Nodlik/StPageFlip) — biblioteca de flipbook
 - GitHub Pages — hospedagem
 
-## 📁 Estrutura
+## 📑 PDF
+
+[👉 Clique aqui](https://victorccruz1.github.io/ebook-violencia/E-book_violencia)
+
+![QR Code do e-book](E-book_violencia.pdf)
