@@ -210,8 +210,6 @@ const pageFlip = new St.PageFlip(
 
         maxShadowOpacity: 0.1,
 
-        disableFlipByClick: true,
-
         showCover: true,
 
         mobileScrollSupport: false,
@@ -220,9 +218,15 @@ const pageFlip = new St.PageFlip(
 
         autoSize: true,
 
-        drawShadow: true,
+        drawShadow: false,
 
-        flippingTime: 600,
+        disableFlipByClick: true,
+
+        clickEventForward: true,
+
+        showPageCorners: false,
+
+        flippingTime: 1200,
 
         startPage: 0,
 
