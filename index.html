@@ -106,10 +106,12 @@ span { color: #ddd; }
 
 </div>
 
+<h2> </h2>
+
 <div class="controls">
-    <button onclick="pageFlip.flipPrev()">◀</button>
+    <button id="btn-prev">◀</button>
     <span id="page-info">Página 1 de 7</span>
-    <button onclick="pageFlip.flipNext()">▶</button>
+    <button id="btn-next">▶</button>
 </div>
 
 <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
@@ -165,6 +167,14 @@ document.addEventListener("keydown", (e) => {
 });
 
 updatePageInfo();
+
+document.getElementById("btn-prev").addEventListener("click", () => {
+    pageFlip.flipPrev();
+});
+
+document.getElementById("btn-next").addEventListener("click", () => {
+    pageFlip.flipNext();
+});
 
 </script>
 
