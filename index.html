@@ -6,13 +6,10 @@
 <title>Guia de Apoio e Proteção para Mulheres</title>
 
 <style>
-/* ===== RESET GLOBAL =====
-   Remove margens/paddings padrão do navegador */
+/* Reset global */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ===== CORPO DA PÁGINA =====
-   Layout em coluna: título → flipbook → botões
-   height: 100vh impede scroll, tudo cabe na tela */
+/* Layout: título → flipbook → botões, tudo na tela sem scroll */
 body {
     background: #1a0a2e;
     font-family: Arial, sans-serif;
@@ -23,19 +20,17 @@ body {
     overflow: hidden;
 }
 
-/* ===== TÍTULO =====
-   Margem mínima pra não desperdiçar espaço */
+/* Título mínimo */
 h1 {
     color: #d8b4fe;
     margin: 4px 0;
     text-align: center;
     font-size: 1rem;
     line-height: 1;
-    flex-shrink: 0;       /* nunca encolhe */
+    flex-shrink: 0;
 }
 
-/* ===== CONTAINER DO FLIPBOOK =====
-   flex:1 faz ele ocupar todo espaço entre título e botões */
+/* Container do flipbook: ocupa todo espaço entre título e botões */
 #flipbook {
     flex: 1;
     width: 100%;
@@ -45,32 +40,30 @@ h1 {
     overflow: hidden;
 }
 
-/* ===== PÁGINAS =====
-   position:relative é referência para os links absolutos */
+/* Cada página: position relative pra posicionar os links por cima */
 .page {
     width: 100% !important;
     height: 100% !important;
     position: relative;
 }
 
-/* Imagem ocupa 100% da página, sem cortar */
+/* Imagem preenche a página sem cortar */
 .page img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-/* Links invisíveis posicionados sobre a imagem
-   Descomente o border pra ver as áreas clicáveis durante ajustes */
+/* Links invisíveis sobre a imagem.
+   Descomente o border pra ver as áreas durante ajuste:
+   border: 2px solid rgba(255,0,0,0.4); */
 .page a {
     position: absolute;
     display: block;
     z-index: 5;
-    border: 2px solid rgba(255,0,0,0.4);
 }
 
-/* ===== BOTÕES DE NAVEGAÇÃO =====
-   flex-shrink:0 garante que não sejam esmagados pelo flipbook */
+/* Botões sempre visíveis embaixo */
 .controls {
     flex-shrink: 0;
     padding: 8px 0 12px;
@@ -88,12 +81,10 @@ button {
     cursor: pointer;
     border-radius: 8px;
     font-size: 1.1rem;
-    touch-action: manipulation;  /* remove delay de 300ms em mobile */
+    touch-action: manipulation;
 }
 
-button:active {
-    background: #6d28d9;        /* feedback visual ao tocar */
-}
+button:active { background: #6d28d9; }
 
 span { color: #ddd; font-size: 0.95rem; }
 </style>
@@ -101,187 +92,105 @@ span { color: #ddd; font-size: 0.95rem; }
 
 <body>
 
-<!-- ===== TÍTULO ===== -->
 <h1>📖</h1>
 
-<!-- ===== FLIPBOOK ===== -->
 <div id="flipbook">
 
-    <!-- ==================== PÁGINA 1 — CAPA ====================
-         Sem links -->
+    <!-- PÁGINA 1 — CAPA (sem links) -->
     <div class="page">
-        <img src="pages/page_1.png" alt="Capa">
+        <img src="pages/page_1.png">
     </div>
 
-    <!-- ==================== PÁGINA 2 — EMERGÊNCIA IMEDIATA ====================
-         4 faixas com telefones de emergência.
-         Cada <a> cobre a faixa inteira do respectivo serviço. -->
+    <!-- PÁGINA 2 — EMERGÊNCIA IMEDIATA (4 telefones) -->
     <div class="page">
-        <img src="pages/page_2.png" alt="Emergência Imediata">
-        <!-- Polícia Militar — 190 (1º card, ~15% a 28% do topo) -->
+        <img src="pages/page_2.png">
         <a href="tel:190" style="top:15%; left:5%; width:90%; height:13%;"></a>
-        <!-- Central de Atendimento à Mulher — 180 (2º card) -->
         <a href="tel:180" style="top:30%; left:5%; width:90%; height:13%;"></a>
-        <!-- SAMU — 192 (3º card) -->
         <a href="tel:192" style="top:46%; left:5%; width:90%; height:13%;"></a>
-        <!-- Polícia Civil — 197 (4º card) -->
         <a href="tel:197" style="top:62%; left:5%; width:90%; height:13%;"></a>
     </div>
 
-    <!-- ==================== PÁGINA 3 — DENUNCIE ====================
-         2 cards: DEAM (topo) e Delegacia Online (baixo) -->
+    <!-- PÁGINA 3 — DENUNCIE (DEAM + Delegacia Online) -->
     <div class="page">
-        <img src="pages/page_3.png" alt="Denuncie">
-        <!-- DEAM — Locais, Contatos e Funcionamento (card superior + seta) -->
-        <a href="https://www.policiacivil.rj.gov.br/atendimentoMulherUnidades" target="_blank"
-           style="top:16%; left:5%; width:90%; height:30%;"></a>
-        <!-- Delegacia Online — Registro de Ocorrências (card inferior + seta) -->
-        <a href="https://delegaciaonline.pcivil.rj.gov.br/" target="_blank"
-           style="top:52%; left:5%; width:90%; height:30%;"></a>
+        <img src="pages/page_3.png">
+        <a href="https://www.policiacivil.rj.gov.br/atendimentoMulherUnidades" target="_blank" style="top:16%; left:5%; width:90%; height:30%;"></a>
+        <a href="https://delegaciaonline.pcivil.rj.gov.br/" target="_blank" style="top:52%; left:5%; width:90%; height:30%;"></a>
     </div>
 
-    <!-- ==================== PÁGINA 4 — APLICATIVO PENHAS ====================
-         2 botões de download: Google Play (esquerda) e App Store (direita) -->
+    <!-- PÁGINA 4 — APLICATIVO PENHAS (Google Play + App Store) -->
     <div class="page">
-        <img src="pages/page_4.png" alt="Aplicativo PenhaS">
-        <!-- Google Play — botão esquerdo -->
-        <a href="https://play.google.com/store/apps/details?id=penhas.com.br&pcampaignid=web_share" target="_blank"
-           style="top:50%; left:3%; width:45%; height:18%;"></a>
-        <!-- App Store — botão direito -->
-        <a href="https://apps.apple.com/br/app/penhas/id1441569466" target="_blank"
-           style="top:50%; left:52%; width:45%; height:18%;"></a>
+        <img src="pages/page_4.png">
+        <a href="https://play.google.com/store/apps/details?id=penhas.com.br&pcampaignid=web_share" target="_blank" style="top:50%; left:3%; width:45%; height:18%;"></a>
+        <a href="https://apps.apple.com/br/app/penhas/id1441569466" target="_blank" style="top:50%; left:52%; width:45%; height:18%;"></a>
     </div>
 
-    <!-- ==================== PÁGINA 5 — O QUE FAZER DEPOIS ====================
-         4 seções empilhadas, cada uma com um link -->
+    <!-- PÁGINA 5 — O QUE FAZER DEPOIS (4 links) -->
     <div class="page">
-        <img src="pages/page_5.png" alt="Redes de Atendimento">
-        <!-- Casa da Mulher Carioca — 1º bloco (topo) -->
-        <a href="https://carioca.rio/servicos/casa-da-mulher-carioca/" target="_blank"
-           style="top:8%; left:3%; width:94%; height:20%;"></a>
-        <!-- Polícia Civil — Redes de Atendimento à Mulher — 2º bloco -->
-        <a href="http://www.policiacivil.rj.gov.br/atendimentoMulherRedes" target="_blank"
-           style="top:30%; left:3%; width:94%; height:15%;"></a>
-        <!-- CEAM / Prefeitura do RJ — 3º bloco -->
-        <a href="https://mulher.prefeitura.rio/centro-especializado-de-atendimento-a-mulher/" target="_blank"
-           style="top:47%; left:3%; width:94%; height:18%;"></a>
-        <!-- NUDEM / Defensoria Pública — 4º bloco (base) -->
-        <a href="https://sistemas.rj.def.br/publico/sarova.ashx/Portal/sarova/imagem-dpge/public/arquivos/mapa_atendimento.pdf" target="_blank"
-           style="top:67%; left:3%; width:94%; height:17%;"></a>
+        <img src="pages/page_5.png">
+        <a href="https://carioca.rio/servicos/casa-da-mulher-carioca/" target="_blank" style="top:8%; left:3%; width:94%; height:20%;"></a>
+        <a href="http://www.policiacivil.rj.gov.br/atendimentoMulherRedes" target="_blank" style="top:30%; left:3%; width:94%; height:15%;"></a>
+        <a href="https://mulher.prefeitura.rio/centro-especializado-de-atendimento-a-mulher/" target="_blank" style="top:47%; left:3%; width:94%; height:18%;"></a>
+        <a href="https://sistemas.rj.def.br/publico/sarova.ashx/Portal/sarova/imagem-dpge/public/arquivos/mapa_atendimento.pdf" target="_blank" style="top:67%; left:3%; width:94%; height:17%;"></a>
     </div>
 
-    <!-- ==================== PÁGINA 6 — DICAS DE SEGURANÇA ====================
-         Sem links -->
+    <!-- PÁGINA 6 — DICAS DE SEGURANÇA (sem links) -->
     <div class="page">
-        <img src="pages/page_6.png" alt="Dicas de Segurança">
+        <img src="pages/page_6.png">
     </div>
 
-    <!-- ==================== PÁGINA 7 — MENSAGEM FINAL ====================
-         Sem links -->
+    <!-- PÁGINA 7 — MENSAGEM FINAL (sem links) -->
     <div class="page">
-        <img src="pages/page_7.png" alt="Mensagem Final">
+        <img src="pages/page_7.png">
     </div>
 
 </div>
 
-<!-- ===== BOTÕES DE NAVEGAÇÃO ===== -->
 <div class="controls">
     <button id="btn-prev">◀</button>
     <span id="page-info">Página 1 de 7</span>
     <button id="btn-next">▶</button>
 </div>
 
-<!-- ===== BIBLIOTECA STPAGEFLIP (efeito de virar página) ===== -->
+<!-- Biblioteca StPageFlip -->
 <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
 
 <script>
-/* ============================================================
-   CONSTANTES
-   ============================================================ */
+/* Total de páginas do e-book */
 var TOTAL_PAGES = 7;
 
-// Proporção largura/altura das páginas do e-book (~retrato celular)
-// Calculada a partir das imagens do PDF (ex: 720x1018 ≈ 0.707)
+/* Proporção largura/altura das imagens (~retrato celular) */
 var PAGE_RATIO = 0.707;
 
-/* ============================================================
-   CÁLCULO DE TAMANHO RESPONSIVO
-   Objetivo: o flipbook ocupa o máximo da tela mantendo proporção,
-   tanto no celular quanto no desktop.
-   ============================================================ */
-
-// Espaço vertical disponível (desconta título + botões ≈ 60px)
+/* Calcula tamanho responsivo que cabe na tela */
 var availableHeight = window.innerHeight - 60;
 var availableWidth  = window.innerWidth;
-
-// Calcula largura ideal baseada na altura, respeitando a proporção
-var flipWidth = Math.floor(availableHeight * PAGE_RATIO);
-
-// Não pode ser maior que a tela (com 20px de margem lateral)
-flipWidth = Math.min(flipWidth, availableWidth - 20);
-
-// Teto de 500px pra não ficar gigante em monitores grandes
-flipWidth = Math.min(flipWidth, 500);
-
-// Altura proporcional à largura calculada
+var flipWidth  = Math.min(Math.floor(availableHeight * PAGE_RATIO), availableWidth - 20, 500);
 var flipHeight = Math.floor(flipWidth / PAGE_RATIO);
 
-/* ============================================================
-   CRIAÇÃO DO FLIPBOOK
-   "var" (e não "const") para ser acessível globalmente
-   ============================================================ */
+/* Cria o flipbook com "var" pra ser acessível globalmente */
 var pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
-
-    /* --- DIMENSÕES ---
-       Tamanho inicial calculado acima */
-    width:  flipWidth,
-    height: flipHeight,
-
-    /* --- MODO DE TAMANHO ---
-       "stretch" = se adapta ao container, respeitando min/max
-       "fixed"   = tamanho fixo, não se adapta */
-    size: "stretch",
-
-    /* --- LIMITES DE TAMANHO ---
-       Garante que funcione de celulares pequenos a monitores grandes */
-    minWidth:  280,
-    maxWidth:  500,
+    width:  flipWidth,              /* largura calculada */
+    height: flipHeight,             /* altura calculada */
+    size: "stretch",                /* se adapta ao container */
+    minWidth:  280,                 /* mínimo (celulares pequenos) */
+    maxWidth:  500,                 /* máximo (não estica em monitores) */
     minHeight: 400,
     maxHeight: 750,
+    usePortrait:  true,             /* 1 página por vez */
+    useLandscape: false,            /* NUNCA mostra 2 páginas lado a lado */
+    drawShadow:   true,             /* sombra ao virar */
+    flippingTime:  600,             /* animação de 600ms */
+    showCover: true,                /* página 1 é capa */
+    startPage: 0,                   /* abre na primeira */
+    disableFlipByClick: true,       /* só vira arrastando nos cantos */
+    mobileScrollSupport: true,      /* não trava scroll do celular */
+    swipeDistance: 30               /* arraste mínimo de 30px pra virar */
+});
 
-    /* --- ORIENTAÇÃO ---
-       usePortrait:true   → mostra 1 página por vez (modo celular)
-       useLandscape:false  → NUNCA mostra 2 páginas lado a lado */
-    usePortrait:  true,
-    useLandscape: false,
+/* Carrega as páginas do HTML */
+pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 
-    /* --- VISUAL ---
-       drawShadow:true    → sombra ao virar a página
-       flippingTime:600   → animação dura 600ms (0.6 segundo) */
-    drawShadow:   true,
-    flippingTime:  600,
-
-    /* --- CAPA ---
-       showCover:true → primeira página é capa (aparece sozinha)
-       startPage:0    → abre na página 0 (primeira) */
-    showCover: true,
-    startPage: 0,
-
-    /* --- INTERAÇÃO ---
-       disableFlipByClick:true → NÃO vira ao clicar no meio da página,
-       só arrastando nos cantos inferiores ou com botões/teclado.
-       Isso também evita conflito com os links <a> clicáveis. */
-    disableFlipByClick: true,
-
-    /* --- SCROLL EM MOBILE ---
-       Permite scroll vertical sem conflitar com o arraste do flipbook */
-    mobileScrollSupport: true,
-
-    /* --- DISTÂNCIA MÍNIMA DE ARRASTE ---
-       O usuário precisa arrastar pelo menos 30px pra virar a página.
-       Evita viradas ac===============================================
-   INDICADOR DE PÁGINA ("Página X de 7")
-   ============================================================ */
+/* Indicador "Página X de 7" */
 var pageInfo = document.getElementById("page-info");
 
 function updatePageInfo() {
@@ -289,29 +198,19 @@ function updatePageInfo() {
     pageInfo.textContent = "Página " + current + " de " + TOTAL_PAGES;
 }
 
-// Atualiza o texto toda vez que uma página é virada
 pageFlip.on("flip", updatePageInfo);
-
-// Exibe o valor inicial ao carregar
 updatePageInfo();
 
-/* ============================================================
-   BOTÕES ◀ ▶
-   Usamos addEventListener (não onclick inline) para funcionar
-   independente do escopo da variável pageFlip.
-   ============================================================ */
+/* Botões ◀ ▶ */
 document.getElementById("btn-prev").addEventListener("click", function() {
-    pageFlip.flipPrev();  // volta uma página
+    pageFlip.flipPrev();
 });
 
 document.getElementById("btn-next").addEventListener("click", function() {
-    pageFlip.flipNext();  // avança uma página
+    pageFlip.flipNext();
 });
 
-/* ============================================================
-   NAVEGAÇÃO POR TECLADO (desktop)
-   Seta direita → avança | Seta esquerda → volta
-   ============================================================ */
+/* Teclado: seta esquerda/direita */
 document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowRight") pageFlip.flipNext();
     if (e.key === "ArrowLeft")  pageFlip.flipPrev();
