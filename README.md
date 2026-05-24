@@ -1,8 +1,11 @@
 # 📖 Guia de Apoio e Proteção para Mulheres em Situação de Violência
 
 Flipbook interativo com informações, canais de denúncia, aplicativos e serviços de apoio voltados à proteção de mulheres em situação de violência ou risco.
+## 📥 Baixe o PDF
 
-## 📖 Acesse o e-book
+[👉 Clique aqui para baixar o PDF](https://github.com/VictorCCruz1/ebook-violencia/blob/main/ebook_violencia.pdf)
+
+## 📖 Acesse o flipbook
 
 [👉 Clique aqui](https://victorccruz1.github.io/ebook-violencia/)
 
@@ -34,6 +37,3 @@ Flipbook interativo com informações, canais de denúncia, aplicativos e servi�
 - [StPageFlip](https://github.com/Nodlik/StPageFlip) — biblioteca de flipbook
 - GitHub Pages — hospedagem
 
-## 📑 PDF
-
-[👉 Clique aqui para visualizar o PDF](https://victorccruz1.github.io/ebook-violencia/pdf-viewer.html)
